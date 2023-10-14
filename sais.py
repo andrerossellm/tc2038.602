@@ -1,19 +1,22 @@
-def getBuckets(T):
-    count = {}
-    buckets = {}
-    for c in T:
+# generates buckets
+def getBuckets(T): 
+    count = {} # count for each character 
+    buckets = {} # starting position for the bucket in each char
+    # map every char to its count - default to 0 if nonexistent before
+    for c in T: 
         count[c] = count.get(c, 0) + 1
     start = 0
-    for c in sorted(count.keys()):
-        buckets[c] = (start, start + count[c])
-        start += count[c]
+    # will auto-sort every char in T (placing $ at the start)
+    for c in sorted(count.keys()): 
+        buckets[c] = (start, start + count[c]) # maps key = (start, end) of bucket 
+        start += count[c] # moves start for bucket of next char
     return buckets
 
 def sais(T):
     t = ["_"] * len(T)
     
-    t[len(T) - 1] = "S"
-    for i in range(len(T) - 1, 0, -1):
+    t[len(T) - 1] = "S" #type array with n - 1 predefined as S
+    for i in range(len(T) - 1, 0, -1): #type computation 
         if T[i-1] == T[i]:
             t[i - 1] = t[i]
         else:
@@ -21,8 +24,9 @@ def sais(T):
     
     buckets = getBuckets(T)
 
+    #phase 1
     count = {}
-    SA = [-1] * len(T)
+    SA = [-1] * len(T) #generate suffix array
     LMS = {}
     end = None
     for i in range(len(T) - 1, 0, -1):
@@ -98,8 +102,3 @@ def sais(T):
                 SA[buckets[symbol][1] - revoffset] = SA[i] - 1
 
     return SA
-
-string = "GTCCCGATGTCATGTCAGGA$"
-T = [ord(c) for c in string]
-SA = sais(T)
-print(SA)
