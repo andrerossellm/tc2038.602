@@ -83,7 +83,7 @@ def sais(T):
 
     names = list(reversed(names)) #reversal
 
-    # sorts all sufixes from correctly sorted LMS
+    # phase 2 - sorts all sufixes from correctly sorted LMS
     SA = [-1] * len(T) #reset SA
     count = {}
     for i in range(len(names)): #compute pos of LMS substr in og string
