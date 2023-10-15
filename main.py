@@ -1,6 +1,7 @@
 from sais import sais
 import os.path
 from time import time
+from guppy import hpy
 
 def menu():
     print("*****SELECCIONE LIBRO POR CARGAR*****")
@@ -45,14 +46,20 @@ def main():
         choi = menu()
         if choi == 0:
             break
+        
+        h = hpy()
         start = time()
+        
         string = readFile(choi)
         T = [ord(c) for c in string]
         SA = sais(T)
         print(SA)
+        
         end = time()
+        
         print("\n")
         print("*****DETALLES DE EJECUCIÓN*****")
+        print(h.heap())
         print(f'Tiempo de ejecución para libro {choi}: {end-start}')
         print("\n\n")
 
