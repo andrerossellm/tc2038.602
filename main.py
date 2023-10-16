@@ -6,7 +6,7 @@ from guppy import hpy
 def menu():
     print("*****SELECCIONE LIBRO POR CARGAR*****")
     print("1. Metamórfosis de Franz Kafka")
-    print("2. La Ilíada de Homero")
+    print("2. Una modesta proposicion de Jonathan Swift")
     print("3. La República de Platón")
     print("4. Las Aventuras de Tom Sawyer de Mark Twain")
     print("5. Memorias del Subsuelo de Dostoyevski")
@@ -64,7 +64,7 @@ def readFile(optn):
     if optn == 1:
         filename += "metamorphosis.txt"
     elif optn == 2:
-        filename += "theiliad.txt"
+        filename += "a_modest_proposal.txt"
     elif optn == 3:
         filename += "therepublic.txt"
     elif optn == 4:

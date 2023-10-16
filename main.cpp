@@ -13,7 +13,7 @@ int menu() {
   int choi;
   cout << "*****SELECCIONE LIBRO POR CARGAR*****" << endl;
   cout << "1. Metamorfosis de Franz Kafka" << endl;
-  cout << "2. La Iliada de Homero" << endl;
+  cout << "2. Una modesta proposicion de Jonathan Swift" << endl;
   cout << "3. La Republica de Platon" << endl;
   cout << "4. Las Aventuras de Tom Sawyer de Mark Twain" << endl;
   cout << "5. Memorias del Subsuelo de Dostoyevski" << endl;
@@ -42,7 +42,7 @@ void fileReader(int choi, string & txt) {
   if (choi == 1)
       filename += "resources/metamorphosis.txt";
   else if (choi == 2)
-      filename += "resources/theiliad.txt";
+      filename += "resources/a_modest_proposal.txt";
   else if (choi == 3)
       filename += "resources/therepublic.txt";
   else if (choi == 4)
