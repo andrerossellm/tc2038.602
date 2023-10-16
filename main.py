@@ -24,6 +24,41 @@ def menu():
         choi = menu()
     return choi
 
+def search(text, SA, query):
+    n = len(text)
+    m = len(query)
+    occurrences = []
+
+    left, right = 0, n - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+        suffix = text[SA[mid]:SA[mid] + m]
+
+        if query == suffix:
+            # Found a match, append it to the list of occurrences
+            occurrences.append(SA[mid])
+            
+            # Continue searching to the right
+            i = mid + 1
+            while i < n and text[SA[i]:SA[i] + m] == query:
+                occurrences.append(SA[i])
+                i += 1
+
+            # Continue searching to the left
+            i = mid - 1
+            while i >= 0 and text[SA[i]:SA[i] + m] == query:
+                occurrences.append(SA[i])
+                i -= 1
+
+            break
+        elif query > suffix:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return sorted(occurrences)
+
 def readFile(optn):
     filename = os.path.dirname(os.path.realpath(__file__)) + "/resources/"
     if optn == 1:
@@ -53,9 +88,18 @@ def main():
         string = readFile(choi)
         T = [ord(c) for c in string]
         SA = sais(T)
+
+
         end = time()
         elTime = end - start
         #print(SA)
+        
+        
+        query = str(input("Texto a buscar: "))
+        query = query.split()
+        query = "_".join(query)
+        occurrences = search(string, SA, query)
+        print("Occurrences of '{}': {}".format(query, occurrences))
         
         print("\n")
         print(f'*****TELEMETRIA DE LIBRO {choi}*****')
