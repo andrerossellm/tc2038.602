@@ -1,8 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <chrono>
 #include "sais.cpp"
 using namespace std;
+using std::chrono::duration;
+using std::chrono::duration_cast;
+using std::chrono::high_resolution_clock;
+using std::chrono::milliseconds;
 
 int menu() {
   int choi;
@@ -63,6 +68,7 @@ int main() {
   for (;;) {
     choi = menu();
     if (choi == 0) break;
+    auto t1 = high_resolution_clock::now();
     fileReader(choi, txt);
 
     vector<int> T;
@@ -70,10 +76,16 @@ int main() {
     vector<int> SA(T.size(), -1);
 
     sais(T, SA);
+    auto t2 = high_resolution_clock::now();
+    duration<double, milli> ms_double = t2 - t1;
 
-    cout << "[ ";
-    for (auto& el : SA) cout << el << " ";
-    cout << "]" << endl << endl << endl;
+    //cout << "[ ";
+    //for (auto& el : SA) cout << el << " ";
+    //cout << "]" << endl << endl << endl;
+
+    cout << "\n*****TELEMETRIA DE LIBRO " << choi << "*****" << endl;
+    cout << "Tiempo de ejecucion: " << ms_double.count() / 1000 << "s" << endl;
+    cout << endl << endl;
   }
 
   return 0;

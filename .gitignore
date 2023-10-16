@@ -34,3 +34,6 @@
 __pycache__
 .vscode
 main
+massif.out.*
+report.txt
+pythonTelemetry.txt
