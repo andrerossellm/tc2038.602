@@ -79,9 +79,9 @@ int main() {
     auto t2 = high_resolution_clock::now();
     duration<double, milli> ms_double = t2 - t1;
 
-    //cout << "[ ";
-    //for (auto& el : SA) cout << el << " ";
-    //cout << "]" << endl << endl << endl;
+    cout << "[ ";
+    for (auto& el : SA) cout << el << " ";
+    cout << "]" << endl << endl << endl;
 
     cout << "\n*****TELEMETRIA DE LIBRO " << choi << "*****" << endl;
     cout << "Tiempo de ejecucion: " << ms_double.count() / 1000 << "s" << endl;
