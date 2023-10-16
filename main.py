@@ -53,14 +53,20 @@ def main():
         string = readFile(choi)
         T = [ord(c) for c in string]
         SA = sais(T)
-        print(SA)
+        #print(SA)
         
         end = time()
-        
+        elTime = end - start
         print("\n")
-        print("*****DETALLES DE EJECUCIÓN*****")
+        print(f'*****TELEMETRIA DE LIBRO {choi}*****')
         print(h.heap())
-        print(f'Tiempo de ejecución para libro {choi}: {end-start}')
+        print(f'Tiempo de ejecución: {elTime}')
         print("\n\n")
+        with open("pythonTelemetry.txt", "a") as f:
+            print(f'*****TELEMETRIA DE LIBRO {choi}*****', file = f)
+            print(h.heap(), file = f)
+            print(f'Tiempo de ejecución: {elTime}', file = f)
+            print("\n", file = f)
+
 
 main()

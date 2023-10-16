@@ -54,7 +54,6 @@ void fileReader(int choi, string & txt) {
   txt = ss.str();
   txt[txt.size() - 1] = '$';
   txt = string(txt.begin() + 3, txt.end());
-  //cout << txt << endl;
 }
 
 int main() {
@@ -69,7 +68,6 @@ int main() {
     vector<int> T;
     for (auto& c : txt) T.push_back((int) c);
     vector<int> SA(T.size(), -1);
-    //for (auto& c : T) cout << c << " ";
 
     sais(T, SA);
 

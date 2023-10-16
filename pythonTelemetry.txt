@@ -1,0 +1,85 @@
+*****TELEMETRIA DE LIBRO 1*****
+Partition of a set of 158338 objects. Total size = 10792669 bytes.
+ Index  Count   %     Size   % Cumulative  % Kind (class / dict of class)
+     0 119424  75  3347380  31   3347380  31 int
+     1    239   0  1995104  18   5342484  50 list
+     2  12171   8  1168276  11   6510760  60 str
+     3   2772   2   998616   9   7509376  70 types.CodeType
+     4    605   0   605480   6   8114856  75 type
+     5   7752   5   549784   5   8664640  80 tuple
+     6   5244   3   469363   4   9134003  85 bytes
+     7   2531   2   384712   4   9518715  88 function
+     8    605   0   219600   2   9738315  90 dict of type
+     9     94   0   132928   1   9871243  91 dict of module
+<130 more rows. Type e.g. '_.more' to view.>
+Tiempo de ejecución: 0.20896363258361816
+
+
+*****TELEMETRIA DE LIBRO 2*****
+Partition of a set of 1141958 objects. Total size = 56683188 bytes.
+ Index  Count   %     Size   % Cumulative  % Kind (class / dict of class)
+     0 1103072  97 30889412  54  30889412  54 int
+     1    239   0 18280840  32  49170252  87 list
+     2  12171   1  3235315   6  52405567  92 str
+     3   2772   0   998616   2  53404183  94 types.CodeType
+     4    605   0   605480   1  54009663  95 type
+     5   7752   1   549784   1  54559447  96 tuple
+     6   5244   0   469363   1  55028810  97 bytes
+     7   2531   0   384712   1  55413522  98 function
+     8    605   0   219600   0  55633122  98 dict of type
+     9     94   0   132928   0  55766050  98 dict of module
+<130 more rows. Type e.g. '_.more' to view.>
+Tiempo de ejecución: 2.769489049911499
+
+
+*****TELEMETRIA DE LIBRO 3*****
+Partition of a set of 1230334 objects. Total size = 61314882 bytes.
+ Index  Count   %     Size   % Cumulative  % Kind (class / dict of class)
+     0 1191448  97 33363940  54  33363940  54 int
+     1    239   0 20244224  33  53608164  87 list
+     2  12171   1  3429129   6  57037293  93 str
+     3   2772   0   998616   2  58035909  95 types.CodeType
+     4    605   0   605480   1  58641389  96 type
+     5   7752   1   549784   1  59191173  97 tuple
+     6   5244   0   469363   1  59660536  97 bytes
+     7   2531   0   384712   1  60045248  98 function
+     8    605   0   219600   0  60264848  98 dict of type
+     9     94   0   132928   0  60397776  99 dict of module
+<130 more rows. Type e.g. '_.more' to view.>
+Tiempo de ejecución: 2.9114906787872314
+
+
+*****TELEMETRIA DE LIBRO 4*****
+Partition of a set of 429738 objects. Total size = 23499752 bytes.
+ Index  Count   %     Size   % Cumulative  % Kind (class / dict of class)
+     0 390852  91 10947252  47  10947252  47 int
+     1    239   0  6445432  27  17392684  74 list
+     2  12171   3  1829511   8  19222195  82 str
+     3   2772   1   998616   4  20220811  86 types.CodeType
+     4    605   0   605480   3  20826291  89 type
+     5   7752   2   549784   2  21376075  91 tuple
+     6   5244   1   469363   2  21845438  93 bytes
+     7   2531   1   384712   2  22230150  95 function
+     8    605   0   219600   1  22449750  96 dict of type
+     9     94   0   132928   1  22582678  96 dict of module
+<130 more rows. Type e.g. '_.more' to view.>
+Tiempo de ejecución: 0.883281946182251
+
+
+*****TELEMETRIA DE LIBRO 5*****
+Partition of a set of 278916 objects. Total size = 16531402 bytes.
+ Index  Count   %     Size   % Cumulative  % Kind (class / dict of class)
+     0 240030  86  6724236  41   6724236  41 int
+     1    239   0  4001760  24  10725996  65 list
+     2  12171   4  1527881   9  12253877  74 str
+     3   2772   1   998616   6  13252493  80 types.CodeType
+     4    605   0   605480   4  13857973  84 type
+     5   7752   3   549784   3  14407757  87 tuple
+     6   5244   2   469363   3  14877120  90 bytes
+     7   2531   1   384712   2  15261832  92 function
+     8    605   0   219600   1  15481432  94 dict of type
+     9     94   0   132928   1  15614360  94 dict of module
+<130 more rows. Type e.g. '_.more' to view.>
+Tiempo de ejecución: 0.5409326553344727
+
+
