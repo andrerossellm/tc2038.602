@@ -54,7 +54,7 @@ void fileReader(int choi, string & txt) {
   txt = ss.str();
   txt[txt.size() - 1] = '$';
   txt = string(txt.begin() + 3, txt.end());
-  cout << txt << endl;
+  //cout << txt << endl;
 }
 
 int main() {
@@ -75,7 +75,7 @@ int main() {
 
     cout << "[ ";
     for (auto& el : SA) cout << el << " ";
-    cout << "]" << endl;
+    cout << "]" << endl << endl << endl;
   }
 
   return 0;

@@ -34,7 +34,6 @@ void sais(vector<int> & T, vector<int> & SA){
   map<int, pair<int,int>> buckets;
   getBuckets(T, buckets); //starting and ending point for every bucket
 
-
   map<int, int> count;
   map<int, int> LMS;
   int end = -1;
@@ -84,8 +83,8 @@ void sais(vector<int> & T, vector<int> & SA){
     if (t[SA[i]] == 'S' && t[SA[i] - 1] == 'L') {
       // if diff from previous LMS substr, increment anme counter, to diff LMSs
       if (prev != -1)
-        if (vector<char>(T.begin() + SA[prev], T.begin() + LMS[SA[prev]]) !=
-                vector<char>(T.begin() + SA[i], T.begin() + LMS[SA[i]]))
+        if (vector<int>(T.begin() + SA[prev], T.begin() + LMS[SA[prev]] + 1) !=
+                vector<int>(T.begin() + SA[i], T.begin() + LMS[SA[i]] + 1))
           name += 1;
       prev = i;             // sets crnt as last seen LMS
       namesp[SA[i]] = name;  // assign computed name
@@ -103,7 +102,9 @@ void sais(vector<int> & T, vector<int> & SA){
   
   //recursive step to sort names list if necessary
   if (name < names.size() - 1) {
-    sais(names, names);
+    vector<int> namesCopy(names.begin(), names.end());
+    names = vector<int>(names.size(), -1);
+    sais(namesCopy, names);
   }
 
   reverse(names.begin(), names.end());
