@@ -92,7 +92,7 @@ def main():
 
         end = time()
         elTime = end - start
-        print(SA)
+        #print(SA)
         
         
         query = str(input("Texto a buscar: "))

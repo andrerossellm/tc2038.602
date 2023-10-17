@@ -61,6 +61,48 @@ void fileReader(int choi, string & txt) {
   txt = string(txt.begin() + 3, txt.end());
 }
 
+void search(const string& txt, const vector<int>& SA, const string& query,
+            vector<int>& occurrences) {
+  int n = txt.size(), m = query.size(), i;
+  int left = 0, right = n - 1, mid;
+  string suffix;
+  while (left <= right) {
+    mid = (left + right) / 2;
+    suffix = string(txt.begin() + SA[mid],
+                    txt.begin() + SA[mid] + m);  // Adjust here to use SA[mid]
+
+    if (query == suffix) {
+      // Found a match, append it to the list of occurrences
+      occurrences.push_back(SA[mid]);
+
+      // continue searching to the right
+      i = mid + 1;
+      while (i < n &&
+             string(txt.begin() + SA[i], txt.begin() + SA[i] + m) == query) {
+        occurrences.push_back(SA[i]);
+        i += 1;
+      }
+
+      // continue searching to the left
+      i = mid - 1;
+      while (i >= 0 &&
+             string(txt.begin() + SA[i], txt.begin() + SA[i] + m) == query) {
+        occurrences.push_back(SA[i]);
+        i -= 1;
+      }
+
+      break;
+    }
+
+    else if (query > suffix)
+      left = mid + 1;
+    else
+      right = mid - 1;
+  }
+
+  sort(occurrences.begin(), occurrences.end());
+}
+
 int main() {
   int choi;
   string txt;
@@ -79,8 +121,20 @@ int main() {
     auto t2 = high_resolution_clock::now();
     duration<double, milli> ms_double = t2 - t1;
 
-    cout << "[ ";
-    for (auto& el : SA) cout << el << " ";
+    //cout << "[ ";
+    //for (auto& el : SA) cout << el << " ";
+    //cout << "]" << endl << endl << endl;
+
+    cout << "Substring to find: ";
+    string query;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    getline(cin, query);
+    vector<int> found;
+    search(txt, SA, query, found);
+
+    cout << "Ocurrences of '" << query << "' [ ";
+    for (auto & ele : found)
+      cout << ele << " ";
     cout << "]" << endl << endl << endl;
 
     cout << "\n*****TELEMETRIA DE LIBRO " << choi << "*****" << endl;
