@@ -1,4 +1,5 @@
-#include <map> 
+#include <map>
+#include <unordered_map>
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -6,7 +7,7 @@ using namespace std;
 
 //generates buckets
 void getBuckets(vector<int> & T, map<int, pair<int,int>> & buckets) {
-  map<int, int> count; //count for each character
+  unordered_map<int, int> count; //count for each character
   for (auto & c : T)
     count[c]++; //map every char to its count - increment count
     
@@ -34,8 +35,8 @@ void sais(vector<int> & T, vector<int> & SA){
   map<int, pair<int,int>> buckets;
   getBuckets(T, buckets); //starting and ending point for every bucket
 
-  map<int, int> count;
-  map<int, int> LMS;
+  unordered_map<int, int> count;
+  unordered_map<int, int> LMS;
   int end = -1;
 
   int revoffset;
